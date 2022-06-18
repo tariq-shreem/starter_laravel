@@ -2,6 +2,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminController;
 
 
 /*
@@ -18,10 +19,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::prefix('dashboard')->name('dashboard.')->middleware(['auth'])->group(function(){
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware(['auth'])->name('dashboard');
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+
+    Route::get('/create',[AdminController::class,'create'])->name('create');
+    Route::post('/store',[AdminController::class,'store'])->name('store');
+});
+
 
 require __DIR__.'/auth.php';
 require __DIR__.'/supervisor.php';
