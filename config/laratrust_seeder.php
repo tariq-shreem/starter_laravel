@@ -15,7 +15,10 @@ return [
         'super_admin' => [
             'users' => 'c,r,u,d',
         ],
-        'admin'=>[]
+        'admin'=>[],
+        
+        'supervisor_city'=>[],
+        'supervisor_school'=>[],
     ],
 
     'permissions_map' => [

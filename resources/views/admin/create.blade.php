@@ -30,7 +30,7 @@
 
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="email" name="name" class="form-control" id="name" placeholder="Enter name">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Enter name">
           </div>
 
         <div class="form-group">
@@ -43,13 +43,50 @@
         </div>
 
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" name="password_confarmation" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="exampleInputPassword1">Confirm Password</label>
+            <input type="password" name="password_confirmation" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
 
 
       </div>
       <!-- /.card-body -->
+
+      <div class="card-header">
+        permissiosn
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" name="permissions[]" value="create_users"  type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                create
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" name="permissions[]" value="read_users" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                read
+              </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" name="permissions[]" value="update_users" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              update
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" name="permissions[]" value="delete_users" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              delete
+            </label>
+        </div>
+          </div>
+
+      </div>
+
 
       <div class="card-footer">
         <button type="submit" class="btn btn-primary">Submit</button>

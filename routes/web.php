@@ -24,8 +24,7 @@ Route::prefix('dashboard')->name('dashboard.')->middleware(['auth'])->group(func
     Route::get('/', function () {
         return view('admin.dashboard');
     })->name('dashboard');
-
-
+    Route::get('/show',[AdminController::class,'index'])->name('index');
     Route::get('/create',[AdminController::class,'create'])->name('create');
     Route::post('/store',[AdminController::class,'store'])->name('store');
 });
